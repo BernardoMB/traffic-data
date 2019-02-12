@@ -1,5 +1,6 @@
 const request = require('request');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;  
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const keys = require('./keys');
 
 const csvWriter = createCsvWriter({  
   path: 'C:\\out.csv',
@@ -13,7 +14,6 @@ const csvWriter = createCsvWriter({
   append: true
 });
 
-const apiKey = 'AIzaSyAWEu5iJDVTWdFJ4jPz2sMZQx1Kq5Q5PAU';
 const outputFormat = 'json';
 
 var getEstimatedTravelingTime = (startingPointAddress, destinationAddress, departureTime, trafficModel) => {
@@ -22,7 +22,7 @@ var getEstimatedTravelingTime = (startingPointAddress, destinationAddress, depar
     const destinations =  encodeURIComponent(destinationAddress); // Location to use as the finishing point for calculating travel distance and time.
     const departure_time = encodeURIComponent(departureTime); // now or Seconds since 1970
     const traffic_model = encodeURIComponent(trafficModel); // best_guess, pessimistic, optimistic
-    const parameters= `origins=${origins}&destinations=${destinations}&departure_time=${departure_time}&traffic_model=${traffic_model}&key=${apiKey}`;
+    const parameters= `origins=${origins}&destinations=${destinations}&departure_time=${departure_time}&traffic_model=${traffic_model}&key=${keys.googleCloudPlatformApiKey}`;
     const url = `https://maps.googleapis.com/maps/api/distancematrix/${outputFormat}?${parameters}`;
     const requestObject = {
         url,
