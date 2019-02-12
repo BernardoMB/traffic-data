@@ -1,5 +1,4 @@
 const request = require('request');
-const fs = require('fs');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;  
 
 const csvWriter = createCsvWriter({  
