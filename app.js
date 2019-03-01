@@ -1,4 +1,4 @@
-const dm = require('./distance-matrix.js');
+const dm = require('./distance-matrix');
 var schedule = require('node-schedule');
 
 const origins = ['Paseo San Agustin 78, Lomas Verdes', 'Valencia 54, Insurgentes Mixcoac'];
