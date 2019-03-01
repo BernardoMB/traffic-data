@@ -7,7 +7,8 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "install-windows-service": "winser -i -c --displayname=\"Traffic Data\"",
-    "uninstall-windows-service": "winser -r -x"
+    "uninstall-windows-service": "winser -r -x",
+    "stop-windows-service": "winser --stop"
   },
   "author": "",
   "license": "ISC",
